@@ -1,0 +1,42 @@
+{
+  "name": "genpark-quantized-model-vram-tensor-parallel-estimator-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Quantized model VRAM footprint and tensor parallelism estimator for optimal local and cloud GPU provisioning.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "hardware-planning",
+  "tags": [
+    "quantization",
+    "vram-estimator",
+    "llama-cpp",
+    "ollama",
+    "tensor-parallelism"
+  ],
+  "inputs": {
+    "parameter_count_billions": {
+      "type": "integer"
+    },
+    "quantization_format": {
+      "type": "string"
+    },
+    "tensor_parallel_size": {
+      "type": "integer"
+    }
+  },
+  "outputs": {
+    "vram_estimate_id": {
+      "type": "string"
+    },
+    "base_model_weights_gb": {
+      "type": "number"
+    },
+    "recommended_vram_per_gpu_gb": {
+      "type": "number"
+    },
+    "quantization_tradeoff_dossier_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
